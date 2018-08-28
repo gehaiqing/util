@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "util tool package",
   "main": "dist/index.js",
-  "typings":"dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,13 @@
   "license": "ISC",
   "dependencies": {
     "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-alloy": "^1.4.2",
+    "eslint-plugin-typescript": "^0.12.0",
+    "typescript": "^3.0.1",
+    "typescript-eslint-parser": "^18.0.0"
   }
 }

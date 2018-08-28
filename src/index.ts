@@ -1,4 +1,5 @@
-export function getCookie(name:string) {
-  var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-  return (arr = document.cookie.match(reg)) ? unescape(arr[2]) : null;
+export function getCookie(name: string) {
+    const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+    const arr = document.cookie.match(reg)
+    return arr ? unescape(arr[2]) : null
 }
