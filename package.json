@@ -1,8 +1,9 @@
 {
   "name": "ghq-util",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "util tool package",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings":"dist/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +12,10 @@
     "util"
   ],
   "author": "gehaiqing",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gehaiqing/util.git"
+  },
   "license": "ISC",
   "dependencies": {
     "typescript": "^3.0.1"
