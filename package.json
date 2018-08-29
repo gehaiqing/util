@@ -1,6 +1,6 @@
 {
-  "name": "ghq-util",
-  "version": "0.0.4",
+  "name": "hopper-util",
+  "version": "0.0.1",
   "description": "util tool package",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,9 +17,6 @@
     "url": "https://github.com/gehaiqing/util.git"
   },
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^3.0.1"
-  },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.4.0",

@@ -5,6 +5,7 @@ module.exports = {
   ],
   rules:{
     "semi": ["error", "never"],
+    "no-param-reassign":"off",
     "no-unused-vars":"warn", //未使用的变量
     "no-new":"off"  //new操作
   }

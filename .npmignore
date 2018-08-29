@@ -5,3 +5,4 @@ node_modules
 .npmignore
 tslint.json
 tsconfig.json
+src
