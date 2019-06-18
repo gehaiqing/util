@@ -3,35 +3,36 @@
  * @param name cookie名称
  */
 export function getCookie(name: string) {
-    const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
-    const arr = document.cookie.match(reg)
-    return arr ? unescape(arr[2]) : null
+  const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+  const arr = document.cookie.match(reg)
+  return arr ? unescape(arr[2]) : null
 }
 
 /**
- *  设置cookie
+ * 设置cookie
  * @param name 名称
  * @param value 值
- * @param expiredays  过期时间，单位为`天`. 默认为会话周期
- * @param path 路径，默认为`/`
+ * @param attrs 属性
  */
-export function setCookie(name: string, value: string, expiredays?:number, path:string = '/') {
-    let expires = ''
-    if (expiredays) {
-        let exdate = new Date()
-        exdate.setDate(exdate.getDate() + expiredays)
-        expires = `;expires=${exdate.toUTCString()}`
-    }
-    document.cookie = `${name}=${escape(value)};path=${path};${expires}`
+export function setCookie(name: string, value: string,
+  attrs: { path: string, domain?: string, expires?: number | string } = { path: '/' }) {
+  if (typeof attrs.expires === 'number') {
+    let exdate = new Date()
+    exdate.setTime(exdate.getTime() + attrs.expires)
+    attrs.expires = exdate.toUTCString()
+  }
+  let attrsString = Object.keys(attrs).reduce((pre, key) => {
+    return pre + `;${key}=${(attrs as any)[key]} `
+  }, '')
+  document.cookie = `${name}=${escape(value)}${attrsString}`
 }
 
 /**
  * 删除cookie
- * @param name 名称
- * @param path 路径，默认为`/`
+ * @param name cookie名称
+ * @param attrs 属性
  */
-export function delCookie(name: string, path:string = '/') {
-    let exdate = new Date()
-    exdate.setDate(exdate.getDate() - 1)
-    document.cookie = `${name}=${getCookie(name)};path=${path};expires=${exdate.toUTCString()};`
+export function removeCookie(name: string,
+  attrs: { path: string, domain?: string, [key: string]: any } = { path: '/' }) {
+  setCookie(name, '', { ...attrs, expires: -1 })
 }

@@ -1,6 +1,6 @@
 {
   "name": "hopper-util",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "util tool package",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -22,6 +22,7 @@
     "eslint": "^5.4.0",
     "eslint-config-alloy": "^1.4.2",
     "eslint-plugin-typescript": "^0.12.0",
+    "tern": "^0.24.0",
     "typescript": "^3.0.1",
     "typescript-eslint-parser": "^18.0.0"
   }
